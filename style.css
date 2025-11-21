@@ -1,22 +1,249 @@
-/* --- NEW GALLERY STYLES (Image-Only Grid) --- */
+/* --- Global Styles and Typography --- */
+body {
+    font-family: 'Montserrat', sans-serif; /* Modern, professional font */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f8f9fa; /* Off-white background */
+    color: #343a40; /* Dark gray text */
+}
 
-.gallery-grid {
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #007bff; /* Primary blue for headings */
+    font-weight: 700;
+}
+
+/* --- Header and Navigation --- */
+header {
+    background-color: #ffffff; /* White header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    display: inline-block;
+    color: #343a40; /* Dark logo text */
+    margin: 0;
+}
+
+header nav {
+    float: right;
+    margin-top: 5px;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+header nav ul li a {
+    color: #343a40;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #28a745; /* Green hover for professionalism */
+}
+
+/* --- Call-to-Action Button (CTA) --- */
+.cta-button {
+    display: inline-block;
+    background-color: #28a745; /* Green CTA */
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #1e7e34;
+}
+
+/* --- Hero Section --- */
+.hero {
+    text-align: center;
+    background: #e9ecef;
+    padding: 80px 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.hero p {
+    max-width: 800px;
+    margin: 20px auto 0;
+    font-size: 1.15em;
+    color: #555;
+}
+
+/* --- Services List (Now a Grid) --- */
+.services h3 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.services-grid {
     display: grid;
-    /* Creates columns that automatically adjust to fit images */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 15px; /* Spacing between photos */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.service-item {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+.service-item h4 {
+    color: #007bff;
+    margin-top: 10px;
+    font-size: 1.25em;
+}
+
+/* --- Image Features Section (For index.html) --- */
+.image-features {
+    padding: 60px 0;
+    background-color: #f1f2f3;
+}
+
+.image-features h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    gap: 30px;
+}
+
+.feature-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.feature-text {
+    flex: 1;
+}
+
+.feature-text h3 {
+    color: #28a745; /* Green subheading */
+}
+
+.feature-image {
+    width: 40%;
+    height: 300px;
+    background-color: #ced4da; /* Placeholder for images */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.feature-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Portfolio Grid (Same as before, but updated look) --- */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
     padding-top: 20px;
 }
 
-.gallery-image {
-    width: 100%; /* Makes the image fill the grid column */
-    height: 300px; /* Gives a fixed height for uniform look */
-    object-fit: cover; /* Crops image nicely to fit the fixed height */
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-    transition: transform 0.2s;
+.project-item {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
 }
 
-.gallery-image:hover {
-    transform: scale(1.02); /* Slight zoom on hover */
+.project-item:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.placeholder-image {
+    background-color: #ced4da;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    color: #6c757d;
+}
+
+/* --- Contact Form Styling --- */
+.contact-form {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #343a40;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+
+/* --- Footer --- */
+footer {
+    background-color: #343a40; /* Dark footer */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
 }
